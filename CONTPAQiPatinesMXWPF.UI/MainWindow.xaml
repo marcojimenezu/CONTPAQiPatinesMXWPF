@@ -1,0 +1,58 @@
+﻿<Window x:Class="CONTPAQiPatinesMXWPF.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CONTPAQiPatinesMXWPF.UI"
+        mc:Ignorable="d"
+        Title="Inicio de Sesión" Height="300" Width="400"
+        Background="#f4f4f4" ResizeMode="CanResize">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+            <!-- Definimos una única columna y tres filas proporcionales -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <!-- Espaciado arriba -->
+                <RowDefinition Height="Auto" />
+                <!-- Contenido principal -->
+                <RowDefinition Height="1*" />
+                <!-- Espaciado abajo -->
+            </Grid.RowDefinitions>
+
+            <!-- Contenido central con StackPanel para apilar controles -->
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+                <!-- Etiqueta y Caja de Texto para Usuario -->
+                <StackPanel Margin="0,10">
+                    <TextBlock Text="Usuario" FontSize="14" Foreground="#616161" />
+                    <Border BorderThickness="0,0,0,1" BorderBrush="#bdbdbd" Margin="0,5">
+                        <TextBox x:Name="txtUsuario" Background="Transparent" BorderThickness="0" 
+                             Padding="2" FontSize="14" />
+                    </Border>
+                </StackPanel>
+
+                <!-- Etiqueta y Caja de Texto para Contraseña -->
+                <StackPanel Margin="0,10">
+                    <TextBlock Text="Contraseña" FontSize="14" Foreground="#616161" />
+                    <Border BorderThickness="0,0,0,1" BorderBrush="#bdbdbd" Margin="0,5">
+                        <PasswordBox x:Name="txtContrasena" Background="Transparent" BorderThickness="0" 
+                                 Padding="2" FontSize="14" />
+                    </Border>
+                </StackPanel>
+
+                <!-- Botón -->
+                <Button Content="Validar" Margin="0,15" Padding="10,5" FontSize="14" 
+                    HorizontalAlignment="Center" Background="#009688" Foreground="White" 
+                    BorderThickness="0" Width="100" Cursor="Hand" 
+                    Click="BtnValidar_Click">
+                    <Button.Effect>
+                        <DropShadowEffect Color="#000000" ShadowDepth="2" Opacity="0.4" />
+                    </Button.Effect>
+                </Button>
+
+                <!-- Mensaje de resultado -->
+                <TextBlock x:Name="lblResultado" Margin="0,10" FontSize="14" 
+           TextAlignment="Center" Foreground="#616161" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
